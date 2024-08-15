@@ -31,16 +31,16 @@ services:
         aliases:
           - kafka
 
-kafka-producer:
-  image: kafka-producer
-  depends_on:
-    - kafka
-  environment:
-    KAFKA_SERVER: "kafka:9092"
-    ZOOKEEPER_SERVER: "zookeeper:32181"
-    PRODUCER_INTERVAL: 100
-  networks:
-    - bridge
+  kafka-producer:
+    image: kafka-producer
+    depends_on:
+      - kafka
+    environment:
+      KAFKA_SERVER: "kafka:9092"
+      ZOOKEEPER_SERVER: "zookeeper:32181"
+      PRODUCER_INTERVAL: 100
+    networks:
+      - bridge
 
 volumes:
   settings:
